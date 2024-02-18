@@ -1,3 +1,9 @@
 export interface proximitySensorPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  activeProximitySensor(): Promise<proximityInfos>;
+  deActiveProximitySensor(): Promise<proximityInfos>;
+  isActive(): Promise<proximityInfos>;
+}
+
+export interface proximityInfos {
+  isOpen: boolean;
 }

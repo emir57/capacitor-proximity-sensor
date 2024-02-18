@@ -1,10 +1,7 @@
-package com.mycompany.plugins.example;
-
-import static android.content.Context.POWER_SERVICE;
+package com.mycompany.plugins.proximity;
 
 import android.annotation.SuppressLint;
 import android.os.PowerManager;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
