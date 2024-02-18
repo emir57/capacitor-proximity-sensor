@@ -1,25 +1,28 @@
 package com.mycompany.plugins.proximity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.PowerManager;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class proximitySensor extends AppCompatActivity {
+public class proximitySensor {
 
     private PowerManager powerManager;
     private PowerManager.WakeLock lock;
 
     private boolean isActive = false;
-    public proximitySensor(){
-        powerManager = (PowerManager)getSystemService(POWER_SERVICE);
-    }
 
     @SuppressLint("InvalidWakeLockTag")
-    public void activeProximitySensor(){
+    public proximitySensor(Context context){
+        powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         lock = powerManager.newWakeLock(PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK,"incall");
-        lock.acquire();
-        isActive = true;
+    }
+
+
+    public void activeProximitySensor(){
+        if(!lock.isHeld()){
+            lock.acquire();
+            isActive = true;
+        }
     }
 
     public void deActivateProximitySensor(){
@@ -32,5 +35,4 @@ public class proximitySensor extends AppCompatActivity {
     public boolean isActive(){
         return isActive;
     }
-
 }

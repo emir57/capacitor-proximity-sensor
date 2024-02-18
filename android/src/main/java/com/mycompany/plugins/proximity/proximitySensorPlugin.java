@@ -1,9 +1,7 @@
 package com.mycompany.plugins.proximity;
 
 import android.Manifest;
-
 import com.getcapacitor.JSObject;
-import com.getcapacitor.PermissionState;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
@@ -14,39 +12,37 @@ import com.getcapacitor.annotation.Permission;
         name = "proximitySensor",
         permissions = {
                 @Permission(
-                        alias = "WAKE_LOCK",
+                        alias = "wake_lock",
                         strings = { Manifest.permission.WAKE_LOCK }
                 )
         }
 )
 public class proximitySensorPlugin extends Plugin {
 
-    private proximitySensor implementation = new proximitySensor();
+    private proximitySensor implementation;
+
+    @Override
+    public void load() {
+        super.load();
+        implementation = new proximitySensor(getContext());
+    }
 
     @PluginMethod
     public void activeProximitySensor(PluginCall call){
-        if(getPermissionState("WAKE_LOCK") != PermissionState.GRANTED){
-            requestPermissionForAlias("WAKE_LOCK",call,"wakeLockPermsCallback");
-        }else{
-            implementation.activeProximitySensor();
-            JSObject jsObject = new JSObject();
-            jsObject.put("isOpen",implementation.isActive());
-            
-            call.resolve(jsObject);
-        }
+        implementation.activeProximitySensor();
+        JSObject jsObject = new JSObject();
+        jsObject.put("isOpen",implementation.isActive());
+
+        call.resolve(jsObject);
     }
 
     @PluginMethod
     public void deActivateProximitySensor(PluginCall call){
-        if(getPermissionState("WAKE_LOCK") != PermissionState.GRANTED){
-            requestPermissionForAlias("WAKE_LOCK",call,"wakeLockPermsCallback");
-        }else{
-            implementation.deActivateProximitySensor();
-            JSObject jsObject = new JSObject();
-            jsObject.put("isOpen",implementation.isActive());
+        implementation.deActivateProximitySensor();
+        JSObject jsObject = new JSObject();
+        jsObject.put("isOpen",implementation.isActive());
 
-            call.resolve(jsObject);
-        }
+        call.resolve(jsObject);
     }
 
     @PluginMethod

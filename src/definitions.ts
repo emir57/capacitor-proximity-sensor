@@ -1,6 +1,6 @@
 export interface proximitySensorPlugin {
   activeProximitySensor(): Promise<proximityInfos>;
-  deActiveProximitySensor(): Promise<proximityInfos>;
+  deActivateProximitySensor(): Promise<proximityInfos>;
   isActive(): Promise<proximityInfos>;
 }
 

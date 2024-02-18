@@ -12,7 +12,7 @@ export class proximitySensorWeb
   async activeProximitySensor(): Promise<proximityInfos> {
     throw new Error('Method not implemented.');
   }
-  async deActiveProximitySensor(): Promise<proximityInfos> {
+  async deActivateProximitySensor(): Promise<proximityInfos> {
     throw new Error('Method not implemented.');
   }
 }
