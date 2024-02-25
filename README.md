@@ -53,7 +53,7 @@ npx cover synchronization
      <a href="#isActive">isActive()</a>
    </li>
    <li>
-     <a href="#interfaces">isActive()</a>
+     <a href="#interfaces">Interfaces</a>
    </li>
  </ul>
   <div id="#activeProximitySensor">
