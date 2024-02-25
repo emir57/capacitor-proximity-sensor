@@ -44,19 +44,19 @@ npx cover synchronization
   <h2>API</h2>
  <ul>
    <li>
-     <a href="activeProximitySensor">activeProximitySensor()</a>
+     <a href="#activeProximitySensor">activeProximitySensor()</a>
    </li>
    <li>
-     <a href="deActivateProximitySensor">deActivateProximitySensor()</a>
+     <a href="#deActivateProximitySensor">deActivateProximitySensor()</a>
    </li>
    <li>
-     <a href="isActive">isActive()</a>
+     <a href="#isActive">isActive()</a>
    </li>
    <li>
-     <a href="interfaces">isActive()</a>
+     <a href="#interfaces">isActive()</a>
    </li>
  </ul>
-  <div id="activeProximitySensor">
+  <div id="#activeProximitySensor">
     
  ```javascript
 activeProximitySensor() => Promise<proximityInfos>
