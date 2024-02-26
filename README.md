@@ -63,7 +63,7 @@ activeProximitySensor() => Promise<proximityInfos>
  ```
 <p>Active proximity sensor</p>
 <p>Returns: Promise<proximityInfos></p>
-<p>Since: 0.0.1</p>
+<p>Since: 0.0.5</p>
   </div>
 
 <hr>
@@ -75,7 +75,7 @@ deActivateProximitySensor() => Promise<proximityInfos>
  ```
 <p>Deactivate proximity sensor</p>
 <p>Returns: Promise<proximityInfos></p>
-<p>Since: 0.0.1</p>
+<p>Since: 0.0.5</p>
   </div>
 
   <hr>
@@ -87,7 +87,7 @@ isActive() => Promise<proximityInfos>
  ```
 <p>Returns sensor active or deactive value</p>
 <p>Returns: Promise<proximityInfos></p>
-<p>Since: 0.0.1</p>
+<p>Since: 0.0.5</p>
   </div>
 
   <hr>
@@ -109,7 +109,7 @@ isActive() => Promise<proximityInfos>
            <td>isOpen</td>
            <td>boolean</td>
            <td>Returns whether the sensor is on or off</td>
-           <td>0.0.1</td>
+           <td>0.0.5</td>
          </tr>
        </tbody>
      </table>
