@@ -46,7 +46,7 @@ public class proximitySensorPlugin extends Plugin {
     }
 
     @PluginMethod
-    public void getActive(PluginCall call){
+    public void isActive(PluginCall call){
         JSObject jsObject = new JSObject();
         jsObject.put("isActive",implementation.isActive());
 
